@@ -21,13 +21,10 @@
   
 }
 
-  .inner {
-  	width: 0;
-  }
-
   .barcode-label {
     border: 1px solid;
     background: white;
+    font: 10pt Times;
   }
   
   #form {
@@ -64,7 +61,7 @@
     	var type = $('#barcodeType').val();
     	var initNum = $('#startingNumber').val();
     	var qty = $('#barcodeQuantity').val();
-    	var name = $('#name').val();
+    	var name = $('#name').val().toUpperCase();
     	
 		$('#barcodeBox').html("");
 		
