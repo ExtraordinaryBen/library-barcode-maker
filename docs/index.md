@@ -68,15 +68,22 @@
 		
 		$('#barcodeBox').append("<input type='button' id='print' value='Print' class='no-print' />");
 		$('#barcodeBox').append("<table border=0 align='center' cellspacing='0'>");
+		
+		var col = 1;
 		for(let i = 0; i < qty; i++) {
-			for(let col = 1; col <= 3; col++) {
-				if(col == 1)
-					$('#barcodeBox').append("<tr>");
-					
-				$('#barcodeBox').append(CreateBarcodeLabel(name, type, ++initNum));
-				if(col == 3)
-					$('#barcodeBox').append("</tr>");
+			if(col == 1)
+				$('#barcodeBox').append("<tr>");
+				
+			$('#barcodeBox').append(CreateBarcodeLabel(name, type, ++initNum));
+			if(col == 2) {
+				$('#barcodeBox').append("</tr>");
+				col = 0;
 			}
+			else {
+				++col;
+			}
+				
+			
 		}
 		$('#barcodeBox').append("</table>");
     
