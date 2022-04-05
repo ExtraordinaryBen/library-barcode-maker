@@ -24,8 +24,10 @@
   .barcode-label {
     border: 1px solid;
     background: white;
-    font: 10pt Times;
-	padding: 4pt;
+    font: 7pt Times;
+	padding: 3px 0 0 0;
+	width: 170px;
+	height: 54px;
   }
   
   #form {
@@ -33,6 +35,11 @@
   }
   
   .barcode-label-name {
+  	color: black;
+  }
+  
+  .barcode-label-value {
+    font-size: 11pt;
   	color: black;
   }
   
@@ -64,29 +71,25 @@
     	var qty = $('#barcodeQuantity').val();
     	var name = $('#name').val().toUpperCase();
     	
-		$('#barcodeBox').html("");
+    	var html = "";
+		$('#barcodeBox').html(html);
 		
-		$('#barcodeBox').append("<input type='button' id='print' value='Print' class='no-print' />");
-		$('#barcodeBox').append("<table border=0 align='center' cellspacing='0'>");
+		html += "<input type='button' id='print' value='Print' class='no-print' />";
+		html += "<table border=0 align='center' cellspacing='0'>";
 		
-		var col = 1;
+		
 		for(let i = 0; i < qty; i++) {
-			if(col == 1)
-				$('#barcodeBox').append("<tr>");
-				
-			$('#barcodeBox').append(CreateBarcodeLabel(name, type, ++initNum));
-			if(col == 2) {
-				$('#barcodeBox').append("</tr>");
-				col = 0;
+			if(i%3 == 0) {
+				html += "<tr>";
 			}
-			else {
-				++col;
+			html += CreateBarcodeLabel(name, type, ++initNum);
+			if(i%3 == 2) {
+				html += "</tr>";
 			}
-				
-			
 		}
-		$('#barcodeBox').append("</table>");
-    
+		html += "</table>"
+		
+		$('#barcodeBox').html(html);
     	JsBarcode(".barcode").init();
     });
     
@@ -100,8 +103,8 @@
     	html.push(
     	"<td class='barcode-label' align='center'>",
     	"<span class='barcode-label-name'>" + name + "</span>",
-    	"<br/>",
     	CreateBarcode(type, value),
+    	"<span class='barcode-label-value'>" + value + "</span>",
 		"</td>"); 
 		
 		return html.join("");
@@ -114,12 +117,12 @@
   		"jsbarcode-format='" + type + "'",
   		"jsbarcode-value='" + value + "'",
   		"jsbarcode-textmargin='0'",
-  		"jsbarcode-margin='5'",
-  		"jsbarcode-height='40'",
-  		"jsbarcode-width='2'",
-  		//"jsbarcode-fontSize='11'",
-  		"jsbarcode-fontoptions='bold'>",
-		"</svg>"); 
+  		"jsbarcode-margin='0'",
+  		"jsbarcode-height='26'",
+  		"jsbarcode-width='1'",
+  		"jsbarcode-displayValue='false'",
+  		"jsbarcode-fontSize='11'",
+  		"jsbarcode-fontoptions='bold' />"); 
 		
 		return html.join("");
     }
