@@ -25,6 +25,7 @@
     border: 1px solid;
     background: white;
     font: 10pt Times;
+	padding: 4pt;
   }
   
   #form {
