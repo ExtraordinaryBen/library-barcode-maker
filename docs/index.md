@@ -41,11 +41,13 @@
   
   .barcode-label-name {
   	color: black;
+  	display: block;
   }
   
   .barcode-label-value {
     font-size: 11pt;
   	color: black;
+  	display: block;
   }
   
   
