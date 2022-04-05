@@ -75,7 +75,7 @@
 				if(col == 1)
 					$('#barcodeBox').append("<tr>");
 					
-				$('#barcodeBox').append(CreateBarcodeLabel(name, type, initNum++));
+				$('#barcodeBox').append(CreateBarcodeLabel(name, type, ++initNum));
 				if(col == 3)
 					$('#barcodeBox').append("</tr>");
 			}
