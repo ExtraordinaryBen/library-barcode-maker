@@ -1,5 +1,5 @@
-<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="JsBarcode.all.min.js"></script>
+<script type="text/javascript" src="/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/JsBarcode.all.min.js"></script>
 
 <style>
 @media print {
