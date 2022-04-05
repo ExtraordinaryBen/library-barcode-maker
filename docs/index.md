@@ -43,6 +43,11 @@
   	color: black;
   }
   
+  #barcodeTable td {
+  	border: 1px black;
+  	padding: 0;
+  }
+  
   
 </style>
 
@@ -75,7 +80,7 @@
 		$('#barcodeBox').html(html);
 		
 		html += "<input type='button' id='print' value='Print' class='no-print' />";
-		html += "<table border=0 align='center' cellspacing='0'>";
+		html += "<table id='barcodeTable' border=0 align='center' cellspacing='0'>";
 		
 		
 		for(let i = 0; i < qty; i++) {
