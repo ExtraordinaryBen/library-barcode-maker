@@ -17,8 +17,13 @@
   
 }
 
+  .inner {
+  	width: 0;
+  }
+
   .barcode-label {
     border: 1px solid;
+    background: white;
   }
   
   #form {
@@ -26,7 +31,7 @@
   }
   
   .barcode-label-name {
-  	
+  	color: black;
   }
   
   
