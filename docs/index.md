@@ -3,7 +3,7 @@
 
 <style>
 .markdown-body table td {
-  padding: 0;
+  padding: 3px 0 0 0;
   border: 1px solid black;
 }
 
