@@ -136,11 +136,11 @@
     
     function GetSetLocalStorage(itemName) {
     	$('#' + itemName).change(function() {
-		localStorage.setItem(itemName, this.value);
-	    });
-	    if(localStorage.getItem(itemName)){
-		$('#' + itemName).val(localStorage.getItem(itemName);
-	    }
+	    localStorage.setItem(itemName, this.value);
+    	});
+        if(localStorage.getItem(itemName)){
+	    $('#' + itemName).val(localStorage.getItem(itemName));
+        }
     
     }
     
