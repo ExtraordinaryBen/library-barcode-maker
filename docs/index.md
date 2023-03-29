@@ -134,4 +134,12 @@
 		return html.join("");
     }
     
+    $(function() {
+	    $('#name').change(function() {
+		localStorage.setItem('name', this.value);
+	    });
+	    if(localStorage.getItem('name')){
+		$('#name').val(localStorage.getItem('name'));
+	    }
+	});
 </script>
