@@ -134,12 +134,21 @@
 		return html.join("");
     }
     
-    $(function() {
-	    $('#name').change(function() {
-		localStorage.setItem('name', this.value);
+    function GetSetLocalStorage(itemName) {
+    	$('#' + itemName).change(function() {
+		localStorage.setItem(itemName, this.value);
 	    });
-	    if(localStorage.getItem('name')){
-		$('#name').val(localStorage.getItem('name'));
+	    if(localStorage.getItem(itemName)){
+		$('#' + itemName).val(localStorage.getItem(itemName);
 	    }
+    
+    }
+    
+    $(function() {
+	    GetSetLocalStorage('name');
+	    GetSetLocalStorage('barcodeType');
+	    GetSetLocalStorage('barcodeQuantity');
+	    
+
 	});
 </script>
